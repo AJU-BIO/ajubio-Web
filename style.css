@@ -77,6 +77,10 @@ body {
   position: relative;
 }
 
+.h100 {
+  height: 100%;
+}
+
 img {
   width: 100%;
   margin: auto;
