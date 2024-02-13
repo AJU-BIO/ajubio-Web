@@ -7,8 +7,11 @@
 }
 
 body {
-  /* background-color: whitesmoke; */
-  background-color: white;
+  background-color: whitesmoke;
+  /* background-color: white; */
+  /* width: 100%;
+  max-width: 1080px;
+  margin: auto; */
   /* padding-top: 20px; */
 }
 
@@ -84,6 +87,23 @@ body {
 img {
   width: 100%;
   margin: auto;
+}
+
+.line > .title {
+  position: relative;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.line > .title::after {
+  content: "";
+  position: absolute;
+  width: 120px;
+  bottom: 0px;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 1px;
+  background-color: #080808;
 }
 
 /* 공통디자인 종료 */
@@ -185,7 +205,7 @@ header > .innerBox > .headerBox > .logo > img {
 }
 
 .firstLine > .textBox {
-  width: 60%;
+  width: 50%;
 }
 
 .imgMain {
@@ -232,15 +252,15 @@ header > .innerBox > .headerBox > .logo > img {
 }
 
 .timeLineWrapper > .item {
-  position: relative;
-  left: 50%;
-  margin: 20px 0px;
+  width: 100%;
+  margin: 50px 0px;
 }
 
 .item > .year {
-  position: relative;
+  position: absolute;
   width: 80px;
   height: 80px;
+  left: 50%;
   border-radius: 50%;
   background-color: white;
   border: 1px solid #191919;
@@ -248,13 +268,12 @@ header > .innerBox > .headerBox > .logo > img {
   line-height: 60px;
   padding: 10px;
   font-size: 1.5rem;
-
   transform: translateX(-50%);
 }
 
 .item > .content {
   padding: 15px;
-  width: 40%;
+  width: calc(50% - 80px);
   background-color: whitesmoke;
   border-radius: 8px;
   position: relative;
@@ -271,20 +290,28 @@ header > .innerBox > .headerBox > .logo > img {
   z-index: 0;
 }
 
-.item:nth-child(2n-1) > .content {
-  position: relative;
-  left: calc(-50% - 80px);
+.item:nth-child(2n-1) {
+  justify-content: flex-end;
+}
+
+.item:nth-child(2n) {
+  justify-content: flex-start;
 }
 
 .item:nth-child(2n) > .content::before {
-  left: -8px;
+  right: -8px;
 }
 .item:nth-child(2n-1) > .content::before {
-  right: -8px;
+  left: -8px;
+}
+
+.item:nth-child(2n) > .content {
+  text-align: right;
+  text-indent: 10px;
 }
 
 .item:nth-child(2n-1) > .content {
-  text-align: right;
+  text-align: left;
   text-indent: 10px;
 }
 
@@ -321,7 +348,7 @@ header > .innerBox > .headerBox > .logo > img {
 }
 
 .imgWrapper > img {
-  width: 60%;
+  width: 50%;
   margin: auto;
 }
 
@@ -333,6 +360,10 @@ header > .innerBox > .headerBox > .logo > img {
 
 .verticalLogo > img {
   width: 30%;
+}
+
+.innerBox > .secondLine {
+  margin-bottom: 50px;
 }
 
 /* footer 디자인 */
